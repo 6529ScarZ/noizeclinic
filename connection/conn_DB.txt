@@ -1,0 +1,6 @@
+localhost
+root
+
+clinic
+3306
+utf8
