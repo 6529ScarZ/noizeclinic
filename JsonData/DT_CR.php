@@ -12,7 +12,10 @@ $conn_DB->conn_PDO();
 set_time_limit(0);
 $rslt = array();
 $series = array();
-$sql="select p1.clinic_no,p2.pname,p1.fname,p1.lname,p1.age,p1.house_no,p1.mo,d.DISTRICT_NAME,a.AMPHUR_NAME,p3.PROVINCE_NAME
+$sql="select CASE clinic_zone
+WHEN '1' THEN 'สาขานาอ้อ'
+WHEN '2' THEN 'สาขากกดู่'
+ELSE NULL END as clinic_zone,p1.clinic_no,cid,p2.pname,p1.fname,p1.lname,p1.age,p1.house_no,p1.mo,d.DISTRICT_NAME,a.AMPHUR_NAME,p3.PROVINCE_NAME
 FROM district d
 LEFT OUTER JOIN amphur a on a.AMPHUR_ID=d.AMPHUR_ID
 LEFT OUTER JOIN province p3 on p3.PROVINCE_ID=d.PROVINCE_ID
@@ -22,6 +25,8 @@ $conn_DB->imp_sql($sql);
     $num_risk = $conn_DB->select();
     for($i=0;$i<count($num_risk);$i++){
     $series['clinic_no'] = $num_risk[$i]['clinic_no'];
+    $series['clinic_zone'] = $num_risk[$i]['clinic_zone'];
+    $series['cid'] = $num_risk[$i]['cid'];
     $series['pname']= $num_risk[$i]['pname'];
     $series['fname']= $num_risk[$i]['fname'];
     $series['lname']= $num_risk[$i]['lname'];
