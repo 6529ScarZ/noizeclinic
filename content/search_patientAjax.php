@@ -6,7 +6,7 @@
 <script src="js/createTable.js" type="text/javascript"></script>
 <script language="Javascript" type="text/javascript">
     //var column1 = '{"รายการความเสี่ยงที่รอ RM man มาตรวจสอบ":["เลขที่","รายการ","เกิดขึ้นเมื่อ","ได้รับเมื่อ"]}';
-    var column1 = '["OPD NO.","สาขา","เลขบัตรฯ","คำนำหน้าชื่อ","ชื่อ","นามสกุล","อายุ","บ้านเลขที่","หมู่","ตำบล","อำเภอ","จังหวัด"]';
+    var column1 = '["OPD NO.","สาขา","เลขบัตรฯ","คำนำหน้าชื่อ","ชื่อ","นามสกุล","อายุ","อายุเต็ม","บ้านเลขที่","หมู่","ตำบล","อำเภอ","จังหวัด"]';
     var tid = 'dbtable1';
     var tid3 = 'dbtable3';
     var tid2 = 'dbtable2';
